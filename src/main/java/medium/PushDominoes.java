@@ -1,6 +1,14 @@
 package medium;
 
 public class PushDominoes {
+    /*
+    You are given an string representing the initial conditions of some dominoes. Each element can take one of three values:
+    L, meaning the domino has just been pushed to the left,
+    R, meaning the domino has just been pushed to the right, or
+    ., meaning the domino is standing still.
+    Determine the orientation of each tile when the dominoes stop falling.
+    Note that if a domino receives a force from the left and right side simultaneously, it will remain upright.
+     */
 
     public static void main(String[] args) {
         System.out.println(pushDominoes("..R...L.L"));
