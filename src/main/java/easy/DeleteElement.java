@@ -1,5 +1,7 @@
 package easy;
 
+import utils.ListNode;
+
 public class DeleteElement {
 
 
@@ -37,31 +39,7 @@ public class DeleteElement {
 
     }
 
-    public static class ListNode {
-        int val;
-        ListNode next;
 
-        ListNode(int val) {
-            this.val = val;
-        }
-
-        ListNode(int val, ListNode next) {
-            this.val = val;
-            this.next = next;
-        }
-
-        public String toString() {
-            StringBuilder sb = new StringBuilder();
-            ListNode cur = this;
-            while (cur != null) {
-                sb.append(cur == this ? cur.val : "-->" + cur.val);
-                cur = cur.next;
-            }
-            return sb.toString();
-        }
-
-
-    }
 
 }
 
