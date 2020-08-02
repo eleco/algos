@@ -4,7 +4,6 @@ import utils.ListNode;
 
 public class FindCycle {
 
-
     public static void main(String args[]) {
         ListNode n1 = new ListNode(1);
         ListNode n2 = new ListNode(2);
@@ -26,6 +25,5 @@ public class FindCycle {
             fast = fast.next.next;
         }
         return false;
-
     }
 }
