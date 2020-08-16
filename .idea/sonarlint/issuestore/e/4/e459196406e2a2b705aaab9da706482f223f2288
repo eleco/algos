@@ -1,0 +1,9 @@
+
+Z	java:S106"9Replace this use of System.out or System.err by a logger.(Ÿ…õ£þÿÿÿÿ8û¬ Ÿ¾.
+Z
+java:S1197"8Move the array designator from the variable to the type.(¡þÏÖøÿÿÿÿ8û¬ Ÿ¾.
+q
+java:S11044"OMake end a static final constant or non-public and provide accessors if needed.(­Û¿žùÿÿÿÿ8ëÚ’Ÿ¾.
+n
+java:S11043"QMake start a static final constant or non-public and provide accessors if needed.(ßÆ‡Ò8ëÚ’Ÿ¾.
+r	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(žå‚‡úÿÿÿÿ8ëÚ’Ÿ¾.
