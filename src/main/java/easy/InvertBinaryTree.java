@@ -24,17 +24,8 @@ public class InvertBinaryTree {
             TreeNode left = root.left;
             TreeNode right = root.right;
 
-            if (right != null && left != null) {
-                root.right = invertTree(left);
-                root.left = invertTree(right);
-            } else if (right != null) {
-                root.left = invertTree(right);
-                root.right = null;
-            } else if (left != null) {
-                root.right = invertTree(left);
-                root.left = null;
-            }
-
+            root.right = (left != null) ? invertTree(left) : null;
+            root.left = (right != null) ? invertTree(right) : null;
         }
         return root;
 
