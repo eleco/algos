@@ -23,3 +23,15 @@ W
 'src/main/java/medium/VideoStiching.java,e/4/e459196406e2a2b705aaab9da706482f223f2288
 f
 6src/main/java/easy/FinalPricesWithSpecialDiscount.java,3/6/366afab25ddaf99c34d0df88f9a0928dd05a754d
+Z
+*src/main/java/easy/MakeTheStringGreat.java,b/1/b19ae3f1f56cd81ee8e0ac7c5f4da4ba642d6ebe
+Q
+!src/main/java/utils/ListNode.java,4/c/4c0cc0513a694a1e33384d377d611dee3249dca2
+P
+ src/main/java/easy/RobotRun.java,3/a/3a8039b27d5e9717bc1dce60df08b495c8d5635e
+U
+%src/main/java/easy/ReverseVowels.java,0/a/0aac2b51e1095277cef7f71a12bb4cb4e987d6f6
+Y
+)src/main/java/easy/StringPermutation.java,6/5/654ec712ae756908ed4ad6e426a0c82af029dd51
+W
+'src/main/java/medium/FriendsCircle.java,c/1/c166d9b34f59f2e4e61019eff4515fa903dabba8
