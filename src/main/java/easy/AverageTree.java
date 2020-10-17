@@ -43,22 +43,14 @@ public class AverageTree {
         while (!q.isEmpty()) {
 
             double d = 0;
-            int nodes = 0;
-            List<TreeNode> l = new ArrayList<TreeNode>();
-
-            while (!q.isEmpty()) {
-                l.add(q.poll());
-            }
-
-            for (int i = 0; i < l.size(); i++) {
-                TreeNode node = l.get(i);
+            int n = q.size();
+            for(int i = 0; i < n; i++) {
+                TreeNode node = q.poll();
                 if (node.left != null) q.add(node.left);
                 if (node.right != null) q.add(node.right);
                 d += node.val;
             }
-            ret.add(d / (double) l.size());
-
-
+            ret.add(d / (double) n);
         }
         return ret;
 
