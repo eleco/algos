@@ -1,8 +1,8 @@
 
-e
-java:S1149"PReplace the synchronized class "Stack" by an unsynchronized one such as "Deque".(›¯’g
 N
 java:S1197"8Move the array designator from the variable to the type.(¸ùªì
-N	java:S106	"9Replace this use of System.out or System.err by a logger.(žÒÄú
 n
 java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(›¯’g
+e
+java:S1149"PReplace the synchronized class "Stack" by an unsynchronized one such as "Deque".(›¯’g
+N	java:S106	"9Replace this use of System.out or System.err by a logger.(žÒÄú
