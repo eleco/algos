@@ -1,6 +1,6 @@
 
-?
-java:S1905"&Remove this unnecessary cast to "int".(µğıÿÿÿÿ
-:
-java:S1905"&Remove this unnecessary cast to "int".(Ü› ×
-Q	java:S106"9Replace this use of System.out or System.err by a logger.(ûİ§­ıÿÿÿÿ
+S	java:S106"9Replace this use of System.out or System.err by a logger.(ûİ§­ıÿÿÿÿ
+<
+java:S1905""&Remove this unnecessary cast to "int".(Ü› ×
+A
+java:S1905&"&Remove this unnecessary cast to "int".(µğıÿÿÿÿ
