@@ -2,6 +2,10 @@ package medium;
 
 public class MinimumInRotatedArray {
 
+    /*
+    Given the sorted rotated array nums, return the minimum element of this array.
+     */
+
     public static void main(String[] args) {
         System.out.println(findMin(new int[]{3,4,5,6,2}));
     }
