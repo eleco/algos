@@ -3,6 +3,11 @@ package easy;
 import java.util.Random;
 
 public class SimulateRand {
+
+    /*
+    Given the API rand7() that generates a uniform random integer in the range [1, 7],
+    write a function rand10() that generates a uniform random integer in the range [1, 10].
+     */
     public static void main(String[] args) {
         System.out.println(rand10());
     }
