@@ -84,3 +84,25 @@ b
 ,src/main/java/easy/IntersectionTwoLists.java,b/1/b155b4385b797a55713f6ea74d12818e6b7ac9e9
 V
 &src/main/java/easy/StringAddition.java,8/6/869294c956a93f621014e6de66c092961e0ec7cc
+P
+ src/main/java/easy/SameTree.java,6/d/6d602e8c86c216e064798fc800f8e0b4dc962452
+^
+.src/main/java/medium/AllAnagramsInAString.java,8/2/82895c20952fd4a6860c07a4aa2deb12f9357f33
+_
+/src/main/java/medium/MinimumInRotatedArray.java,0/9/09bd94593be3f449a2d7ef9ae1c58f1a85e75df4
+Y
+)src/main/java/easy/NumberOfgoodPairs.java,9/0/9069956b7f6516e69ddb4793a0ce2fcee919b38a
+T
+$src/main/java/easy/SimulateRand.java,6/2/622062b1971ed889d3c316449b83748632a5cd53
+j
+:src/main/java/medium/MinimumRemoveForValidParentheses.java,9/a/9a87ca7f97e6f2dfb8eebaa805825f67ede4c952
+a
+1src/main/java/easy/BestTimeToBuyAndSellStock.java,1/5/15785360fc8c8345727403de3ad76141a2e20b3d
+[
++src/main/java/medium/MatrixDiagonalSum.java,a/3/a348272181d443b348dc79c9e4e534a27fbe1015
+\
+,src/main/java/easy/ShortestWordDistance.java,0/7/075c5a77ebbb56588e557c2855229ada37e1636f
+M
+src/main/java/utils/Node.java,7/8/78e54f337ae6e2d9efb13df5cf84c11d1a8f075c
+^
+.src/main/java/easy/NaryPostOrderTraversal.java,f/6/f6282fe60a9706fa4ea2d754a462f8368180c2a6
