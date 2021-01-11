@@ -15,41 +15,36 @@ public class RomanToInteger {
 
     public static int romanToInt(String s) {
 
-        if (s == null || s.length() == 0) return 0;
+            if (s==null  || s.length()==0) return 0;
+            Map<String, Integer> m = new HashMap<String, Integer>();
+            m.put("I",1);
+            m.put("V",5);
+            m.put("X",10);
+            m.put("L",50);
+            m.put("C", 100);
+            m.put("D", 500);
+            m.put("M", 1000);
+            m.put("IV", 4);
+            m.put("IX", 9);
+            m.put("XL", 40);
+            m.put("XC", 90);
+            m.put("CD", 400);
+            m.put("CM", 900);
 
-        int sum = 0;
-        Map<String, Integer> bipatterns = new HashMap<String, Integer>();
-        bipatterns.put("IV", 4);
-        bipatterns.put("IX", 9);
-        bipatterns.put("XL", 40);
-        bipatterns.put("XC", 90);
-        bipatterns.put("CD", 400);
-        bipatterns.put("CM", 900);
+            int c = 0;
+            for (int i=0;i<s.length();i++) {
 
-        for (Map.Entry<String, Integer> e : bipatterns.entrySet()) {
-
-            int idx = s.indexOf(e.getKey());
-            if (idx >= 0) {
-                sum += e.getValue();
-                s = s.substring(0, idx) + s.substring(idx + 2);
+                Integer r = null;
+                if (i<s.length()-1) {
+                    r =m.get(s.substring(i,i+2));
+                }
+                if (r==null) {
+                    r =m.get(s.substring(i,i+1));
+                } else {
+                    i++;
+                }
+                c+=r;
             }
+            return c;
         }
-
-
-        Map<Character, Integer> patterns = new HashMap<Character, Integer>();
-        patterns.put('I', 1);
-        patterns.put('V', 5);
-        patterns.put('X', 10);
-        patterns.put('L', 50);
-        patterns.put('C', 100);
-        patterns.put('D', 500);
-        patterns.put('M', 1000);
-
-        for (Character c : s.toCharArray()) {
-            sum += patterns.get(c);
-        }
-
-        return sum;
-
-    }
 }
