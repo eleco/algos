@@ -2,6 +2,13 @@ package medium;
 
 public class AdditiveNumber {
 
+    /*
+    Additive number is a string whose digits can form additive sequence.
+
+    A valid additive sequence should contain at least three numbers. Except for the first two numbers,
+    each subsequent number in the sequence must be the sum of the preceding two.
+     */
+
     public static void main(String[] args) {
         System.out.println(isAdditiveNumber("112358"));
     }
