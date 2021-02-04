@@ -4,6 +4,9 @@ import java.util.*;
 
 public class KeyboardRow {
 
+    /* Given an array of strings words, return the words that can be typed using letters of the alphabet
+    on only one row of American keyboard like the image below.
+     */
     public static void main(String args[]) {
         System.out.println(Arrays.toString(findWords(new String[]{"Alaska", "Piano"})));
     }
