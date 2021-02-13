@@ -11,6 +11,9 @@ public class LeftmostColumnWithAtLeastOne {
      * If such an index does not exist, return -1
      */
 
+    /**
+     * BinaryMatrix required on classpath
+     */
 
     /*public int leftMostColumnWithOne(BinaryMatrix binaryMatrix) {
 
