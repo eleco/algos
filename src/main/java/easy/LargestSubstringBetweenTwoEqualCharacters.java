@@ -12,7 +12,6 @@ public class LargestSubstringBetweenTwoEqualCharacters {
         System.out.println(maxLengthBetweenEqualCharacters("mbsderedss"));
     }
 
-
     static int maxLengthBetweenEqualCharacters(String s) {
         for (int i = 0; i < s.length(); i++) {
 
