@@ -1,5 +1,7 @@
 package easy;
 
+import java.util.Optional;
+
 public class PerfectNumbers {
 
     /*
@@ -14,6 +16,7 @@ public class PerfectNumbers {
 
 
     static boolean checkPerfectNumber(int num) {
+
         int sum = 0;
         // Divisors cannot exceed the half of the number!
         //Suppose we can write n=a∗b, so both a and b are factors.
