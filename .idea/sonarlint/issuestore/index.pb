@@ -39,7 +39,7 @@ W
 
 .gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
 V
-&src/main/java/easy/ToeplitzMatrix.java,9/8/985cf7e3a14f94dd235bd71948341c053da222c1
+&src/main/java/easy/ToeplitzMatrix.java,9\8\985cf7e3a14f94dd235bd71948341c053da222c1
 V
 &src/main/java/easy/CountingPrimes.java,5/e/5efb346fcda214105041f7c225cac442f29638de
 Z
@@ -176,3 +176,23 @@ a
 1src/main/java/easy/Intersection3SortedArrays.java,5\7\57497b333dd6028e69b74d1456203d605bd82590
 [
 +src/main/java/easy/SievesOfErastothene.java,c\c\cc673737c90ee070993f4fbb81fb054f1db7d23b
+d
+4src/main/java/easy/MaximumProductOfThreeNumbers.java,a\8\a8a6a4afe174d6f14bff5981b1ab48af83523fed
+d
+4src/main/java/easy/ConvertBinaryNumberToInteger.java,0\3\03d3973de3f2dcc4617593ee60a022e4ae211286
+Z
+*src/main/java/medium/PalindromQueries.java,2\e\2e7fa87a568290d96c1793e486de30063472795e
+j
+:src/main/java/easy/WordsThatCanBeFormedWithCharacters.java,6\2\627a8504ea9ef779fef6c1067580c5db4cdc131e
+j
+:src/main/java/medium/MaximumScoreAfterSplittingAStrig.java,b\8\b82dda67d9ad813b771c2006e99fedf77bd263f5
+L
+src/main/java/easy/test.java,6\9\694ada3f88da1f5c129cba0d0ab4035f2aad55e6
+S
+#src/main/java/medium/Celebrity.java,c\b\cb5bc4ffd889934d99d6e4ae95c558a4a53fefd4
+q
+Asrc/main/java/easy/LongestSubarrayConsistingOfUniqueElements.java,d\a\da232c61dcc18b14deaa92312996006f634b4547
+V
+&src/main/java/easy/PerfectNumbers.java,a\8\a8eed440b374a13dd29b0f32fe6f8ed2b72003a6
+Y
+)src/main/java/easy/DistributeCandies.java,d\a\dad76fc1a36f56517cc886b39244bb3f67bcf3c8
