@@ -5,8 +5,19 @@ import java.util.concurrent.CopyOnWriteArrayList;
 
 public class ReconstructItinerary {
 
+    /*
+    You are given a list of airline tickets where tickets[i] = [fromi, toi] represent the departure and the arrival airports of one flight.
+    Reconstruct the itinerary in order and return it.
+
+    All of the tickets belong to a man who departs from "JFK", thus, the itinerary must begin with "JFK".
+    If there are multiple valid itineraries, you should return the itinerary that has the smallest lexical order when read as a single string.
+    For example, the itinerary ["JFK", "LGA"] has a smaller lexical order than ["JFK", "LGB"].
+
+    You may assume all tickets form at least one valid itinerary. You must use all the tickets once and only once.
+    */
+
     static int nbtickets=0;
-    static Map<String, List<String>> m = new HashMap<>();
+    static Map<String, List<String>> possibleVisits = new HashMap<>();
     static List<String> result = new ArrayList<String>();
 
     public static void main(String[] args) {
@@ -19,20 +30,20 @@ public class ReconstructItinerary {
    static List<String> findItinerary(List<List<String>> tickets) {
 
             result = new ArrayList<String>();
-            m.clear();
+            possibleVisits.clear();
 
             for (List<String> ticket : tickets) {
-                List<String> l = m.get(ticket.get(0));
+                List<String> l = possibleVisits.get(ticket.get(0));
                 if (l==null) {
                     l = new CopyOnWriteArrayList<String>();
                     l.add(ticket.get(1));
                 }else {
                     l.add(ticket.get(1));
                 }
-                m.put(ticket.get(0),l);
+                possibleVisits.put(ticket.get(0),l);
             }
 
-            for (Map.Entry<String, List<String>> entry : m.entrySet()) {
+            for (Map.Entry<String, List<String>> entry : possibleVisits.entrySet()) {
                 Collections.sort(entry.getValue());
             }
 
@@ -45,23 +56,24 @@ public class ReconstructItinerary {
         }
 
 
-        static void dfs(String node, List<String> trips) {
+        static void dfs(String departure, List<String> trips) {
 
+            //terminal condition
             if (trips.size()==nbtickets+1) {
                 result.addAll(trips);
                 return ;
             }
-            List<String> candidates = m.get(node);
+            List<String> candidates = possibleVisits.get(departure);
             if(candidates==null) return;
 
             for (String candidate:candidates){
 
-                List<String> visits = m.get(node);
-                if (visits==null || !visits.contains(candidate)) {
+                List<String> arrivals = possibleVisits.get(departure);
+                if (arrivals==null || !arrivals.contains(candidate)) {
                     continue;
                 }
                 else {
-                    visits.remove(candidate);
+                    arrivals.remove(candidate);
                 }
                 trips.add(candidate);
 
@@ -70,8 +82,9 @@ public class ReconstructItinerary {
                     return;
                 }
 
+                //backtrack
                 trips.remove(trips.size()-1);
-                visits.add(candidate);
+                arrivals.add(candidate);
             }
 
         }
