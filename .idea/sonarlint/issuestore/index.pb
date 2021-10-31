@@ -106,3 +106,7 @@ M
 src/main/java/utils/Node.java,7/8/78e54f337ae6e2d9efb13df5cf84c11d1a8f075c
 ^
 .src/main/java/easy/NaryPostOrderTraversal.java,f/6/f6282fe60a9706fa4ea2d754a462f8368180c2a6
+Y
+)src/main/java/easy/ValidParenthesis1.java,9/e/9ee79e6b921518e446d5102016c71a55f7af909e
+[
++src/main/java/medium/ValidParenthesis2.java,b/d/bd8446f3bd68e18ddf8e22486a61cd91fc98a712
