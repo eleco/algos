@@ -13,22 +13,20 @@ public class InvertBinaryTree {
         n1.right = n3;
         n3.right = n4;
         System.out.println(n1);
-        System.out.println(invertTree(n1));
+        invert(n1);
+        System.out.println(n1);
 
     }
+    static void invert(TreeNode root) {
+        if (root==null) return;
 
-    public static TreeNode invertTree(TreeNode root) {
+        TreeNode left = root.left;
+        TreeNode right = root.right;
 
-        if (root != null) {
+        root.left = right;
+        root.right= left;
 
-            TreeNode left = root.left;
-            TreeNode right = root.right;
-
-            root.right = (left != null) ? invertTree(left) : null;
-            root.left = (right != null) ? invertTree(right) : null;
-        }
-        return root;
-
-
+        invert(root.left);
+        invert(root.right);
     }
 }

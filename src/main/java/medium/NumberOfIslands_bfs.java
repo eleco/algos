@@ -5,7 +5,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Set;
 
-public class NumberOfIslands {
+public class NumberOfIslands_bfs {
 
 
     //Given a 2d grid map of '1's (land) and '0's (water), count the number of islands.
