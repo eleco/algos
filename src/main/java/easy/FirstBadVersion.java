@@ -23,26 +23,24 @@ public class FirstBadVersion {
     }
 
     public static int firstBadVersion(int n) {
-        int lo = 1;
-        int hi = n;
-        while (lo <= hi) {
-            int mid = (lo / 2 + hi / 2);
-            if (isBadVersion(mid) && (mid == 1 || !isBadVersion(mid - 1))) {
-                return mid;
-            } else {
-                if (!isBadVersion(mid)) {
-                    lo = mid + 1;
-                } else {
-                    hi = mid - 1;
+        return bsearch(1, n);
+    }
 
-                }
-            }
-            if (lo == hi) {
-                return lo;
-            }
 
+    private static int bsearch(int lo, int hi) {
+
+        int mid = lo + (hi - lo) / 2;
+
+        if (isBadVersion(mid)) {
+            if (mid == 0) return 0;
+
+            if (!isBadVersion(mid - 1)) return mid;
+
+            return bsearch(1, mid - 1);
+        } else {
+            return bsearch(mid + 1, hi);
         }
-        return 0;
+
     }
 }
 

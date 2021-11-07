@@ -18,20 +18,19 @@ public class BinarySearch {
 
     private static int searchb(int[] nums, int lo, int hi, int target) {
 
-        int mid = (lo + hi) / 2;
+        while (lo <= hi) {
+            int mid = lo + (hi - lo) / 2;
+            if (nums[mid] == target) return mid;
 
-        if (nums[mid] == target) return mid;
-
-        if (lo < hi) {
-
-            if (nums[mid] < target) {
-                return searchb(nums, mid + 1, hi, target);
+            if (nums[mid] > target) {
+                hi = mid - 1;
             } else {
-                return searchb(nums, 0, mid - 1, target);
+                lo = mid + 1;
             }
 
         }
-        return -1;
-
+        return lo;
     }
+
+
 }
