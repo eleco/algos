@@ -15,43 +15,24 @@ class Solution {
         System.out.println(subsets(new int[]{4,5,6,7}));
     }
 
-    public static List<List<Integer>> subsets(int[] nums) {
-        List<List<Integer>> result = new ArrayList();
+    static List<List<Integer>> subsets(int[] nums) {
 
-        //cascase(nums, result);
-        for (int i = 0; i <= nums.length; i++) {
-            dfs(nums, result, 0, nums.length, new ArrayList<Integer>(), i);
-        }
-        return result;
+        List<List<Integer>> subsets =new ArrayList();
+        backtrack(nums, subsets, new ArrayList(),0);
+        return subsets;
     }
 
 
-    public static void dfs(int[] nums, List<List<Integer>> result, int first, int max,
-                           List<Integer> l, int size) {
 
-        if (size == l.size()) {
-            result.add(new ArrayList(l));
-            return;
-        }
-        for (int i = first; i < max; i++) {
-            l.add(nums[i]);
-            dfs(nums, result, i + 1, max, l, size);
-            l.remove(l.size() - 1);
-        }
-    }
+    static void backtrack (int [] nums, List<List<Integer>> subsets , List<Integer> currSubset, int start) {
 
+        subsets.add(currSubset);
 
-    public static void cascade(int[] nums, List<List<Integer>> result) {
-
-        result.add(new ArrayList());
-
-        for (int i = 0; i < nums.length; i++) {
-            int initialSize = result.size();
-            for (int j = 0; j < initialSize; j++) {
-                List<Integer> l = new ArrayList(result.get(j));
-                l.add(nums[i]);
-                result.add(l);
-            }
+        for (int i=start;i<nums.length;i++) {
+            currSubset.add(nums[i]);
+            List<Integer> copy = new ArrayList(currSubset);
+            backtrack(nums, subsets, copy, ++start);
+            currSubset.remove(currSubset.size()-1);
         }
     }
 }
