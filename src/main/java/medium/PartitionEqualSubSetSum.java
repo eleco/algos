@@ -1,6 +1,7 @@
 package medium;
 
-import java.util.*;
+import java.util.HashSet;
+import java.util.Set;
 
 public class PartitionEqualSubSetSum {
 
@@ -10,70 +11,38 @@ public class PartitionEqualSubSetSum {
      */
 
     public static void main(String[] args) {
-        System.out.println(canPartition_v1(new int[]{1,2,3,4}));
-        System.out.println(canPartition_v2(new int[]{1,2,3,4}));
+        System.out.println(canPartition(new int[]{1, 2, 3, 4}));
     }
 
-    public static boolean canPartition_v1(int[] nums) {
+    static boolean canPartition(int[] nums) {
 
-        int sum=0;
-        for (int i=0;i<nums.length;i++) sum+=nums[i];
-        if (sum%2!=0) return false;
-
-        Set<Integer> possibleSums = new HashSet<>(Collections.singletonList(0));
-        for (int i=0;i<nums.length;i++) {
-            Set<Integer> clonedSums = new HashSet(possibleSums);
-            for (Integer s : clonedSums)  possibleSums.add(s+nums[i]);
+        int sum = 0;
+        for (int i = 0; i < nums.length; i++) {
+            sum += nums[i];
         }
-        return possibleSums.contains(sum/2);
+        if (sum % 2 != 0) return false;
+
+        int target = sum / 2;
+
+        Set<Integer> memo = new HashSet();
+
+        return dfs(0, nums, 0, target, memo);
     }
 
-
-    public static boolean canPartition_v2   (int[] nums) {
-        int sum=0;
-        for (int num : nums)  sum += num;
-
-        if (sum%2!=0) return false;
-
-        return rec(0,0, sum/2, nums);
-    }
-
-    static Map<Key, Boolean> m = new HashMap<Key, Boolean>();
-
-    static boolean rec(int sum, int idx, int target, int [] nums) {
-
-        if (sum==target) return true;
-
-        if (idx>nums.length-1) return false;
-
-        m.put(new Key(sum, idx), false);
-        Boolean a = m.get(new Key(sum+nums[idx], idx+1));
-        Boolean b = m.get(new Key(sum, idx+1));
-
-        return (
-                (a!=null  ? a : rec(sum+nums[idx],idx+1, target, nums))
-                        ||
-                        (b!=null ? b: rec(sum, idx+1, target, nums))
-        );
-    }
-
-    static class Key {
-        int sum;
-        int idx;
-
-        @Override
-        public boolean equals(Object o) {
-            return ((Key)o).sum == this.sum && ((Key)o).idx == this.idx;
+    static boolean dfs(int curSum, int[] nums, int start, int target, Set<Integer> memo) {
+        if (curSum == target) {
+            return true;
         }
 
-        @Override
-        public int hashCode() {
-            return sum*idx;
+        for (int i = start; i < nums.length; i++) {
+            if (!memo.contains(curSum + nums[i])) {
+                boolean ret = dfs(curSum + nums[i], nums, i + 1, target, memo);
+                memo.add(curSum + nums[i]);
+                if (ret) return true;
+            }
         }
-
-        public Key(int sum, int idx) {
-            this.sum= sum;
-            this.idx = idx;
-        }
+        return false;
     }
+
+
 }
