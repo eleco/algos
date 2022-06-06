@@ -17,7 +17,7 @@ public class IntersectionTwoLists {
         System.out.println(getIntersectionNode2(n1, n2));
     }
 
-    public ListNode getIntersectionNode2(ListNode headA, ListNode headB) {
+    public static ListNode getIntersectionNode2(ListNode headA, ListNode headB) {
 
         Set<ListNode> n = new HashSet<>();
         while(headA!=null) {
