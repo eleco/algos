@@ -1,6 +1,6 @@
 package medium;
 
-public class MaximumErasuerValue {
+public class MaximumErasureValue {
 
 
     /*
