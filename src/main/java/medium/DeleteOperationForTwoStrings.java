@@ -19,6 +19,9 @@ public class DeleteOperationForTwoStrings {
         return solve(word1, word2, 0, 0);
     }
 
+    //check char by char, based on 2 pointers, one for each string
+    //if char matches, then advance both pointers and solve rest of the strings
+    //if not match, solve for the case where each pointer is advanced separately
 
     static int solve(String w1, String w2, int i1, int i2) {
 
