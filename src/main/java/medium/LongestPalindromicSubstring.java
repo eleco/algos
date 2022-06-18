@@ -6,7 +6,10 @@ public class LongestPalindromicSubstring {
     Given a string s, return the longest palindromic substring in s.
      */
     public static void main(String[] args) {
+
         System.out.println(longestPalindrome("babad"));
+        System.out.println(longestPalindrome2("babad"));
+
     }
 
 
@@ -80,6 +83,58 @@ public class LongestPalindromicSubstring {
 
         }
         return sb.toString();
+
+    }
+
+
+    //alternative solution
+    //first catch all identical characters e.g case of 'aaaa'
+    //then expand from left and right centering on the current character
+    static String longestPalindrome2(String s) {
+
+        int max = 0;
+        String maxS = "";
+
+        for (int i = 0; i < s.length(); i++) {
+
+            String cur = String.valueOf(s.charAt(i));
+            int left = i;
+            int right = i;
+            while (right <= s.length() - 1) {
+                if (cur.length() > max) {
+                    max = cur.length();
+                    maxS = cur;
+                }
+                if (right + 1 <= s.length() - 1 && s.charAt(right) == s.charAt(right + 1)) {
+                    right++;
+                    cur = cur + s.charAt(right);
+                } else break;
+            }
+
+            while (left >= 0 && right <= s.length() - 1) {
+                if (cur.length() > max) {
+                    max = cur.length();
+                    maxS = cur;
+                }
+
+                if (right + 1 <= s.length() - 1 && left - 1 >= 0 && s.charAt(right + 1) == s.charAt(left - 1)) {
+                    right++;
+                    left--;
+                    cur = s.charAt(left) + cur;
+                    cur = cur + s.charAt(right);
+                } else break;
+            }
+        }
+        return maxS;
+    }
+
+
+    static boolean isPal(String s) {
+        for (int i = 0; i < s.length() / 2; i++) {
+            if (s.charAt(i) != s.charAt(s.length() - 1 - i)) return false;
+        }
+        return true;
+
 
     }
 }
