@@ -1,6 +1,7 @@
 package easy;
 
 import java.util.Arrays;
+import java.util.Comparator;
 
 public class MaximumUnitsOnATruck {
 
@@ -22,24 +23,15 @@ public class MaximumUnitsOnATruck {
 
     public static int maximumUnits(int[][] boxTypes, int truckSize) {
 
-        Arrays.sort(boxTypes, (a, b) -> Integer.compare(b[1],a[1])); //decreasing order
+        Arrays.sort(boxTypes, (o1, o2) -> o2[1]-o1[1]);
 
         int units=0;
-        int nbBoxes=0;
-
-        for (int i=0;i<boxTypes.length;i++) {
-            int nbBox = boxTypes[i][0];
-            for (int j=0;j<nbBox;j++) {
-                int tmpCap = boxTypes[i][1];
-                if (nbBoxes<truckSize) {
-                    units+= tmpCap;
-                    nbBoxes++;
-                } else {
-                    return units;
-                }
-            }
-
+        for (int[] boxType : boxTypes) {
+            int maxBoxes = Math.min(boxType[0], truckSize);
+            truckSize -= maxBoxes;
+            units += maxBoxes * boxType[1];
         }
         return units;
     }
+
 }
