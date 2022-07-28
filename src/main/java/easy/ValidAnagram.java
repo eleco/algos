@@ -11,12 +11,8 @@ public class ValidAnagram {
      */
     public static void main(String args[]) {
         System.out.println(validAnagram1("cat", "tac"));
-        System.out.println(validAnagram1("listen", "silent"));
-        System.out.println(validAnagram1("program", "function"));
-
         System.out.println(validAnagram2("cat", "tac"));
-        System.out.println(validAnagram2("listen", "silent"));
-        System.out.println(validAnagram2("program", "function"));
+        System.out.println(validAnagram3("cat", "tac"));
     }
 
     public static boolean validAnagram1(String s1, String s2) {
@@ -69,6 +65,14 @@ public class ValidAnagram {
                 return false;
             }
         }
+        return true;
+    }
+
+    static boolean validAnagram3(String s, String t) {
+        char[] cs = new char[26];
+        for (int i = 0; i < s.length(); i++) cs[s.charAt(i) - 'a']++;
+        for (int i = 0; i < t.length(); i++) cs[t.charAt(i) - 'a']--;
+        for (int i = 0; i < 26; i++) if (cs[i] != 0) return false;
         return true;
     }
 
