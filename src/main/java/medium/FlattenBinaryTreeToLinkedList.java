@@ -27,18 +27,24 @@ public class FlattenBinaryTreeToLinkedList {
         System.out.println(n1);
     }
 
-    static void flatten(TreeNode root) {
+    static void flatten(TreeNode node) {
 
-        if (root==null) return;
+        if (node==null) return;
 
-        if (root.left!=null){
-            TreeNode pre = root.left;
+        /* for each node:
+            - find the left node
+            - go to the lowest level node on the right hand side of the left node
+            - "cut and paste" right side of the tree to node found above
+            - repeat on the right hand side
+         */
+        if (node.left!=null){
+            TreeNode pre = node.left;
             while(pre.right!=null) pre=pre.right;
-            pre.right=root.right;
-            root.right = root.left;
-            root.left=null;
+            pre.right=node.right;
+            node.right = node.left;
+            node.left=null;
         }
-        flatten(root.right);
+        flatten(node.right);
 
 
     }
