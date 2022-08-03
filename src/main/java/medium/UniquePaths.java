@@ -11,7 +11,7 @@ public class UniquePaths {
 
     public static void main(String[] args) {
         System.out.println(uniquePaths_dp(3, 4));
-        System.out.println(uniquePaths_dfs(3, 4,0,0));
+        System.out.println(uniquePaths_dfs(3, 4));
     }
 
     static int uniquePaths_dp(int m, int n) {
