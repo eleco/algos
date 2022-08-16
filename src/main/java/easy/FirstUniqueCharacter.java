@@ -7,12 +7,32 @@ import java.util.Set;
 
 public class FirstUniqueCharacter {
 
+
+    /*
+    Given a string s, find the first non-repeating character in it and return its index.
+     If it does not exist, return -1.
+
+     */
+
     public static void main(String[] args) {
-        System.out.println(firstUniqChar("abcabd"));
-        System.out.println(firstUniqChar("developer"));
+        System.out.println(firstUniqChar_map("abcabd"));
+        System.out.println(firstUniqChar_map("developer"));
+
+        System.out.println(firstUniqChar_arr("abcabd"));
+        System.out.println(firstUniqChar_arr("developer"));
     }
 
-    public static int firstUniqChar(String s) {
+
+    static int firstUniqChar_arr(String s) {
+        char[] cs = new char[26];
+        for (int i = 0; i < s.length(); i++) cs[s.charAt(i) - 'a']++;
+
+
+        for (int i = 0; i < s.length(); i++) if (cs[s.charAt(i) - 'a'] == 1) return i;
+        return -1;
+    }
+
+    public static int firstUniqChar_map(String s) {
         Map<Character, Integer> m = new LinkedHashMap<>();
         Set<Character> dups = new HashSet();
         for (int i = 0; i < s.length(); i++) {
